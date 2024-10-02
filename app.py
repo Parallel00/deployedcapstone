@@ -37,7 +37,7 @@ def index():
 
         params = {"forQR": url}
         headers = {
-            "x-rapidapi-key": "e978d93128msh9a0d23411ab8a0fp16dfbcjsn9c3c4d21f62b",  # Replace with your actual API key
+            "x-rapidapi-key": os.getenv('RAPIDAPI_KEY'),  # Replace with your actual API key
             "x-rapidapi-host": "getqrcode.p.rapidapi.com"
         }
 
