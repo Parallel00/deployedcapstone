@@ -3,7 +3,7 @@ backcall==0.1.0
 bcrypt==3.1.4
 blinker==1.4
 cffi==1.14.2
-Click==7.0
+Click==8.1.7
 decorator==4.3.0
 Faker==0.9.1
 Flask==3.0.3
