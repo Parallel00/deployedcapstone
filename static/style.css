@@ -1,0 +1,15 @@
+body{
+	margin: 0;
+	font-family: Segoe UI Light;
+	text-align: center;
+	background-color: grey;
+	color: white;
+}
+
+h1{
+	font-size: 61px;
+}
+
+.container{
+	background-color: light-grey;
+}
