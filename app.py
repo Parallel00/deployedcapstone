@@ -8,7 +8,7 @@ import base64
 app = Flask(__name__)
 
 # Configuring the database
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://qr_app_kjhr_user:jCuUxKnPGzd9O78bc5c06X1n50CRTPzw@dpg-cruuv0tds78s73a593g0-a/qr_app_kjhr'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///qr-app'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
