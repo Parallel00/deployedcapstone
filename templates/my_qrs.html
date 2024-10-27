@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+				<title>My QR Codes</title>
+				<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+				<body>
+					<div class="container">
+						<h1>My QR Codes</h1>
+						<p>Your QR Codes are saved automatically.  You'll find them here!<p>
+        {% if qrcodes %}
+            <table class="table">
+									<thead>
+										<tr>
+											<th>URL</th>
+											<th>QR Code</th>
+										</tr>
+									</thead>
+									<tbody>
+											{% for qr in qrcodes %}
+											<tr>
+											<td>{{ qr.url }}</td>
+											<td>
+												<img src="{{ qr.qr_code_url }}" alt="QR Code for {{ qr.url }}"/>
+												<td>
+													<form action="{{ url_for('delete_qr_code', qr_code_id=qr.id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this QR Code?');">
+														<button type="submit" class="btn btn-danger">Delete</button>
+													</form>
+												</td>
+											</tr>
+    {% endfor %}
+				</tbody>
+									</table>
+        {% else %}
+            <p>No QR codes found. <a href="{{ url_for('index') }}">Generate your first QR code!</a>
+									</p>
+        {% endif %}
+    </div>
+							</body>
+						</html>
